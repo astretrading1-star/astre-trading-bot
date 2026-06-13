@@ -12,9 +12,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
 
     await update.message.reply_text(
-        "🔥 BIENVENUE CHEZ ASTRE TRADING 🔥",
-        reply_markup=InlineKeyboardMarkup(keyboard)
-    )
+    "🔥 BIENVENUE CHEZ ASTRE TRADING 🔥\n\n"
+    "📈 Signaux Forex Premium\n"
+    "₿ Opportunités Crypto\n"
+    "📊 Analyses de marché\n"
+    "🎓 Formation Trading\n"
+    "⭐ Communauté VIP\n\n"
+    "👇 Choisissez une option ci-dessous :",
+    reply_markup=InlineKeyboardMarkup(keyboard)
+)
 
 app = Application.builder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
