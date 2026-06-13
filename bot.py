@@ -5,6 +5,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 TOKEN = os.getenv("BOT_TOKEN")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        user_name = update.effective_user.first_name
+    
     keyboard = [
         [InlineKeyboardButton("⭐ Rejoindre le Groupe VIP Payant", url="https://t.me/+8DK58OC8UJVkZDFk")],
         [InlineKeyboardButton("👥 Groupe Gratuit", url="https://t.me/astretrading")],
@@ -12,7 +14,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
 
     await update.message.reply_text(
-    "🔥 BIENVENUE {user_name} CHEZ ASTRE TRADING 🔥\n\n"
+    f"🔥 BIENVENUE {user_name} CHEZ ASTRE TRADING 🔥\n\n"
     "📈 Signaux Forex Premium\n"
     "₿ Opportunités Crypto\n"
     "📊 Analyses de marché\n"
